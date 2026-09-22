@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f8f2" />
+    <meta
+      name="description"
+      content="Explore the good, the challenging, and the in-between of social media. Thoughtful questions for a healthier relationship with your feed."
+    />
+    <title>Perspective — Let's talk about social media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a class="brand" href="#" aria-label="Perspective home"
+        ><span class="brand-symbol"><i></i><i></i></span>perspective<span
+          class="brand-dot"
+          >.</span
+        ></a
+      >
+      <nav aria-label="Main navigation">
+        <button class="nav-link active" data-view="explore">
+          Explore questions</button
+        ><button class="nav-link" data-view="reflections">
+          My reflections <span id="reflection-count">0</span></button
+        ><button class="nav-link" data-view="resources">Resources</button>
+      </nav>
+      <button class="button header-check" data-check>
+        Take a quick check-in <span data-icon="arrow-up-right"></span>
+      </button>
+    </header>
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="small-dot"></span> A LITTLE PERSPECTIVE GOES A LONG WAY
+          </div>
+          <h1>Let’s talk about<br /><span>social media.</span></h1>
+          <p>
+            It connects us. It challenges us. It’s a part of life.<br />Explore
+            both sides, ask better questions, and find<br
+              class="desktop-break"
+            />
+            what a healthy balance looks like for you.
+          </p>
+          <div class="hero-actions">
+            <button class="button primary" id="explore-button">
+              Explore the questions
+              <span data-icon="arrow-right"></span></button
+            ><button class="text-button" id="how-button">
+              <span class="play-icon" data-icon="play"></span> How it works
+            </button>
+          </div>
+          <div class="hero-note">
+            <span class="mini-avatars"><b>J</b><b>A</b><b>M</b></span
+            ><span
+              >Different experiences.
+              <strong>Better conversations.</strong></span
+            >
+          </div>
+        </div>
+        <div
+          class="hero-art"
+          aria-label="Illustration of a social media phone with the positive side and the challenging side"
+          role="img"
+        >
+          <svg viewBox="0 0 570 430" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern
+                id="dots"
+                width="19"
+                height="19"
+                patternUnits="userSpaceOnUse"
+              >
+                <circle cx="2" cy="2" r="1" fill="#bfcaba" />
+              </pattern>
+            </defs>
+            <circle cx="304" cy="220" r="179" fill="#e7eddf" />
+            <path
+              d="M73 309c-13-114 99-195 227-192s206 62 186 174"
+              fill="none"
+              stroke="#c1cdb9"
+              stroke-width="1.3"
+              stroke-dasharray="5 7"
+            />
+            <path
+              d="M147 88h139v77H147zM373 284h126v81H373z"
+              fill="url(#dots)"
+            />
+            <g transform="rotate(9 299 224)">
+              <rect
+                x="210"
+                y="60"
+                width="191"
+                height="324"
+                rx="28"
+                fill="#bccbad"
+              />
+              <rect
+                x="201"
+                y="54"
+                width="191"
+                height="324"
+                rx="28"
+                fill="#fcfdf7"
+                stroke="#294d37"
+                stroke-width="2.4"
+              />
+              <path d="M263 55v8q0 11 11 11h47q11 0 11-11v-8" fill="#294d37" />
+              <circle cx="224" cy="97" r="9" fill="#d8e4cc" />
+              <path
+                d="M240 94h58m-58 7h33"
+                stroke="#b8c8b0"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <circle cx="372" cy="97" r="2" fill="#294d37" />
+              <rect
+                x="215"
+                y="118"
+                width="163"
+                height="151"
+                rx="7"
+                fill="#e3ebd8"
+              />
+              <circle cx="337" cy="151" r="17" fill="#edcd7f" />
+              <path
+                d="M215 230l56-66 46 51 28-31 33 41v38q0 6-6 6H221q-6 0-6-6z"
+                fill="#9db28e"
+              />
+              <path
+                d="M215 252l54-39 50 33 33-24 26 29v12q0 6-6 6H221q-6 0-6-6z"
+                fill="#6d8e69"
+              />
+              <path
+                d="M224 287c-7-10-18 2 0 12 18-10 7-22 0-12z"
+                fill="#c87c61"
+              />
+              <path
+                d="M246 286h13v10h-8l-5 4zM269 286l14 6-11 8 1-8z"
+                fill="none"
+                stroke="#46614a"
+                stroke-width="1.5"
+              />
+              <path
+                d="M364 286v14l-5-4-5 4v-14z"
+                fill="none"
+                stroke="#46614a"
+                stroke-width="1.5"
+              />
+              <path
+                d="M219 317h123m-123 10h85"
+                stroke="#d5ddcb"
+                stroke-width="5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M273 358h48"
+                stroke="#294d37"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+            </g>
+            <g transform="rotate(-8 151 153)">
+              <rect
+                x="49"
+                y="108"
+                width="177"
+                height="81"
+                rx="13"
+                fill="#315a3b"
+              />
+              <circle cx="79" cy="137" r="14" fill="#648363" />
+              <path d="M79 143c-13-8-7-17 0-10 7-7 13 2 0 10z" fill="#edf3e6" />
+              <text
+                x="102"
+                y="140"
+                font-family="Arial,sans-serif"
+                font-size="14"
+                font-weight="600"
+                fill="#fff"
+              >
+                More connection
+              </text>
+              <text
+                x="69"
+                y="170"
+                font-family="Arial,sans-serif"
+                font-size="11"
+                fill="#d6e1cf"
+              >
+                Find your people. Feel seen.
+              </text>
+            </g>
+            <g transform="rotate(6 428 282)">
+              <rect
+                x="342"
+                y="241"
+                width="184"
+                height="87"
+                rx="13"
+                fill="#f4ddce"
+                stroke="#e8cbbb"
+              />
+              <circle cx="369" cy="269" r="13" fill="#e9c3aa" />
+              <path
+                d="M363 270v-7m6 12v-16m6 11v-7"
+                stroke="#815640"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <text
+                x="391"
+                y="273"
+                font-family="Arial,sans-serif"
+                font-size="14"
+                font-weight="600"
+                fill="#684939"
+              >
+                More comparison
+              </text>
+              <text
+                x="358"
+                y="305"
+                font-family="Arial,sans-serif"
+                font-size="11"
+                fill="#85634d"
+              >
+                Not every scroll feels good.
+              </text>
+            </g>
+            <g transform="rotate(12 435 106)">
+              <rect
+                x="407"
+                y="80"
+                width="58"
+                height="52"
+                rx="14"
+                fill="#f2dfac"
+              />
+              <path
+                d="M426 96h21v15h-12l-7 6v-6h-2z"
+                fill="none"
+                stroke="#826b37"
+                stroke-width="2"
+              />
+              <path
+                d="M431 101h11m-11 5h8"
+                stroke="#826b37"
+                stroke-width="1.6"
+              />
+            </g>
+            <path
+              d="M133 342c8-18 14-31 13-64m-3 39c-29 0-36-17-32-31 24 4 31 19 32 31m3-15c24-6 28-24 20-36-22 10-23 22-20 36m-10 33c-29 3-41-9-39-25 24-1 34 11 39 25"
+              fill="#91a782"
+              stroke="#6d8d60"
+              stroke-width="1.5"
+            />
+            <path
+              d="M168 64v15m-7-8h15M478 185v17m-8-8h16M89 225v11m-5-5h11"
+              stroke="#8f9f79"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <circle cx="370" cy="39" r="4" fill="#d9b96f" />
+            <circle cx="193" cy="368" r="4" fill="#d9b96f" />
+            <path
+              d="M405 361q27 6 33-9"
+              fill="none"
+              stroke="#94a37f"
+              stroke-width="1.5"
+            />
+            <path
+              d="m431 351 9-3-1 10"
+              fill="none"
+              stroke="#94a37f"
+              stroke-width="1.5"
+            />
+          </svg>
+          <div class="art-caption">Same platform. Different perspectives.</div>
+        </div>
+      </section>
+      <section class="values-strip" aria-label="Our approach">
+        <div>
+          <span data-icon="sun"></span
+          ><span
+            ><strong>The positives</strong
+            ><small>Connection, creativity & opportunity</small></span
+          >
+        </div>
+        <div>
+          <span data-icon="cloud"></span
+          ><span
+            ><strong>The challenges</strong
+            ><small>Comparison, pressure & overload</small></span
+          >
+        </div>
+        <div>
+          <span data-icon="balance"></span
+          ><span
+            ><strong>Your balance</strong
+            ><small>Awareness, boundaries & better habits</small></span
+          >
+        </div>
+      </section>
+      <section class="questions-section" id="questions">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">PAUSE. THINK. DISCOVER.</div>
+            <h2 id="section-title">A question can change your perspective.</h2>
+            <p id="section-description">
+              There are no perfect answers. Just a chance to get to know your
+              digital self.
+            </p>
+          </div>
+          <span class="question-total" id="question-total"
+            >12 questions to explore <span data-icon="sparkles"></span
+          ></span>
+        </div>
+        <div class="question-toolbar">
+          <div class="tabs" role="group" aria-label="Filter questions">
+            <button class="tab active" data-filter="all">
+              All questions <span>12</span></button
+            ><button class="tab" data-filter="positive">
+              <span data-icon="sun"></span> The positives</button
+            ><button class="tab" data-filter="challenge">
+              <span data-icon="cloud"></span> The challenges</button
+            ><button class="tab" data-filter="balance">
+              <span data-icon="balance"></span> Finding balance
+            </button>
+          </div>
+          <label class="search"
+            ><span data-icon="search"></span
+            ><input
+              type="search"
+              id="search"
+              placeholder="Find a question…"
+              aria-label="Find a question"
+            /><kbd>/</kbd></label
+          >
+        </div>
+        <div class="question-grid" id="question-grid"></div>
+        <div id="empty-state" hidden>
+          <span data-icon="book"></span>
+          <h3 id="empty-title">Nothing here just yet.</h3>
+          <p id="empty-copy">
+            Try another search or explore a different perspective.
+          </p>
+        </div>
+        <div class="load-row">
+          <button class="button load-button" id="load-more">
+            More food for thought <span data-icon="arrow-down"></span></button
+          ><span id="showing-count">Showing 6 of 12 questions</span>
+        </div>
+      </section>
+      <section class="check-banner">
+        <div class="banner-icon" data-icon="leaf"></div>
+        <div>
+          <div class="eyebrow">LESS AUTOPILOT. MORE INTENTION.</div>
+          <h2>How’s your relationship with your feed?</h2>
+          <p>A 2-minute check-in. A little clarity. A fresh place to start.</p>
+        </div>
+        <button class="button primary" data-check>
+          Let’s check in <span data-icon="arrow-right"></span>
+        </button>
+      </section>
+      <footer>
+        <a class="brand" href="#"
+          ><span class="brand-symbol"><i></i><i></i></span>perspective<span
+            class="brand-dot"
+            >.</span
+          ></a
+        >
+        <p>A space for curiosity, not judgment.</p>
+        <span
+          >Made for a more mindful scroll <span data-icon="leaf"></span
+        ></span>
+      </footer>
+    </main>
+    <dialog id="modal">
+      <button
+        class="modal-close icon-button"
+        aria-label="Close dialog"
+        id="close-modal"
+      >
+        <span data-icon="x"></span>
+      </button>
+      <div id="modal-content"></div>
+    </dialog>
+    <div id="toast" role="status"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
