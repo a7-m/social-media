@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#f7f8f2" />
     <meta
       name="description"
-      content="Explore the good, the challenging, and the in-between of social media. Thoughtful questions for a healthier relationship with your feed."
+      content="Explore the good, the challenging, and the in-between of social media. General-knowledge quizzes about the positives, negatives, and responsible use of social media."
     />
     <title>Perspective — Let's talk about social media</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,12 +28,12 @@
       <nav aria-label="Main navigation">
         <button class="nav-link active" data-view="explore">
           Explore questions</button
-        ><button class="nav-link" data-view="reflections">
-          My reflections <span id="reflection-count">0</span></button
+        ><button class="nav-link" data-view="saved">
+          Saved questions <span id="saved-count">0</span></button
         ><button class="nav-link" data-view="resources">Resources</button>
       </nav>
-      <button class="button header-check" data-check>
-        Take a quick check-in <span data-icon="arrow-up-right"></span>
+      <button class="button header-check" data-quiz>
+        Take the knowledge quiz <span data-icon="arrow-up-right"></span>
       </button>
     </header>
     <main>
@@ -44,11 +44,9 @@
           </div>
           <h1>Let’s talk about<br /><span>social media.</span></h1>
           <p>
-            It connects us. It challenges us. It’s a part of life.<br />Explore
-            both sides, ask better questions, and find<br
-              class="desktop-break"
-            />
-            what a healthy balance looks like for you.
+            It connects communities. It creates challenges.<br />Explore social
+            media’s positives and negatives<br class="desktop-break" />
+            through questions, facts, and clear explanations.
           </p>
           <div class="hero-actions">
             <button class="button primary" id="explore-button">
@@ -59,10 +57,11 @@
             </button>
           </div>
           <div class="hero-note">
-            <span class="mini-avatars"><b>J</b><b>A</b><b>M</b></span
+            <span class="format-icons" aria-hidden="true"
+              ><b>A</b><b>✓</b><b>T/F</b></span
             ><span
-              >Different experiences.
-              <strong>Better conversations.</strong></span
+              >Three question formats.
+              <strong>One broader perspective.</strong></span
             >
           </div>
         </div>
@@ -305,7 +304,7 @@
         <div>
           <span data-icon="balance"></span
           ><span
-            ><strong>Your balance</strong
+            ><strong>Finding balance</strong
             ><small>Awareness, boundaries & better habits</small></span
           >
         </div>
@@ -313,15 +312,15 @@
       <section class="questions-section" id="questions">
         <div class="section-heading">
           <div>
-            <div class="eyebrow">PAUSE. THINK. DISCOVER.</div>
-            <h2 id="section-title">A question can change your perspective.</h2>
+            <div class="eyebrow">EXPLORE. ANSWER. UNDERSTAND.</div>
+            <h2 id="section-title">A question can change a perspective.</h2>
             <p id="section-description">
-              There are no perfect answers. Just a chance to get to know your
-              digital self.
+              Explore the facts with multiple-choice, select-all-that-apply, and
+              true/false questions.
             </p>
           </div>
           <span class="question-total" id="question-total"
-            >12 questions to explore <span data-icon="sparkles"></span
+            >0 of 12 questions answered <span data-icon="sparkles"></span
           ></span>
         </div>
         <div class="question-toolbar">
@@ -363,12 +362,15 @@
       <section class="check-banner">
         <div class="banner-icon" data-icon="leaf"></div>
         <div>
-          <div class="eyebrow">LESS AUTOPILOT. MORE INTENTION.</div>
-          <h2>How’s your relationship with your feed?</h2>
-          <p>A 2-minute check-in. A little clarity. A fresh place to start.</p>
+          <div class="eyebrow">THREE FORMATS. A BROADER PERSPECTIVE.</div>
+          <h2>What are the positives and negatives of social media?</h2>
+          <p>
+            12 general-knowledge questions. Clear answers. Something new to
+            learn.
+          </p>
         </div>
-        <button class="button primary" data-check>
-          Let’s check in <span data-icon="arrow-right"></span>
+        <button class="button primary" data-quiz>
+          Start the quiz <span data-icon="arrow-right"></span>
         </button>
       </section>
       <footer>
@@ -384,7 +386,7 @@
         ></span>
       </footer>
     </main>
-    <dialog id="modal">
+    <dialog id="modal" aria-labelledby="modal-title">
       <button
         class="modal-close icon-button"
         aria-label="Close dialog"

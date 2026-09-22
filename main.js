@@ -27,159 +27,236 @@ const categories = {
   challenge: { label: "The challenges", icon: "cloud" },
   balance: { label: "Finding balance", icon: "balance" },
 };
+const formats = {
+  multiple: { label: "Multiple choice", instruction: "Choose one answer." },
+  select: {
+    label: "Select all that apply",
+    instruction:
+      "Select all correct answers. Full credit requires every correct option and no incorrect options.",
+  },
+  boolean: { label: "True / false", instruction: "Choose true or false." },
+};
 const questions = [
   {
     id: 1,
     type: "positive",
-    title: "Has social media helped you feel more connected?",
-    description:
-      "Think about the people and communities you’ve found along the way.",
-    insight:
-      "An online community can help us feel understood, especially when our interests or experiences aren’t shared by the people nearby. What matters is the quality of that connection, not the number of followers.",
-    prompt:
-      "Think of one connection that has made a difference. What makes it meaningful?",
+    format: "multiple",
+    title: "Which is a potential benefit of social media?",
+    description: "Explore how online platforms can bring communities together.",
+    options: [
+      "Guaranteeing that all information is accurate",
+      "Connecting people with shared interests across distances",
+      "Removing the need for offline relationships",
+      "Preventing all disagreements",
+    ],
+    correct: [1],
+    explanation:
+      "Social media can connect people across geographic boundaries and help communities form around shared interests. It does not guarantee accurate information, replace offline relationships, or eliminate disagreements.",
   },
   {
     id: 2,
     type: "challenge",
-    title: "Do you ever compare your life to someone else’s feed?",
-    description:
-      "Highlight reels can change how we see our own everyday moments.",
-    insight:
-      "A feed is a selection of moments, not a whole life. When comparison shows up, it can help to notice what you’re comparing: someone else’s public highlight or your private reality.",
-    prompt:
-      "Which kinds of posts bring up comparison? How could you respond with more kindness to yourself?",
+    format: "select",
+    title: "Which are potential risks of social media use?",
+    description: "Identify challenges that can arise on social platforms.",
+    options: [
+      "Cyberbullying and harassment",
+      "Exposure to misleading information",
+      "Access to educational communities",
+      "Sharing personal information beyond its intended audience",
+    ],
+    correct: [0, 1, 3],
+    explanation:
+      "Harassment, misinformation, and unintended exposure of personal information are potential risks. Access to educational communities is a potential benefit, not a risk in itself. Experiences vary by platform, content, and how people use it.",
   },
   {
     id: 3,
     type: "balance",
-    title: "What does a healthy amount of scrolling look like for you?",
+    format: "boolean",
+    title: "There is one ideal daily social media time limit for everyone.",
     description:
-      "There’s no magic number. Let’s find what feels right for your life.",
-    insight:
-      "Time is only one piece of the puzzle. How you feel afterward, what you do online, and whether it crowds out sleep or relationships can be more useful signals.",
-    prompt: "What’s one sign that it’s time to put your phone down?",
+      "Consider whether healthy use can be defined by a single number.",
+    options: ["True", "False"],
+    correct: [1],
+    explanation:
+      "No single time limit suits everyone. Age, needs, content, and context matter, as does whether social media interferes with sleep, responsibilities, or relationships.",
   },
   {
     id: 4,
     type: "positive",
-    title: "What’s something new you’ve learned from your feed?",
-    description:
-      "From a small life skill to a whole new way of seeing the world.",
-    insight:
-      "Social platforms can make learning accessible and introduce us to new perspectives. Checking who is sharing information and looking for original sources helps turn curiosity into informed understanding.",
-    prompt: "What did you learn, and how could you check that it’s reliable?",
+    format: "select",
+    title: "How can social media support learning?",
+    description: "Recognize constructive ways to share knowledge online.",
+    options: [
+      "Sharing educational tutorials",
+      "Making popular posts automatically reliable",
+      "Connecting learners with knowledgeable communities",
+      "Introducing different perspectives",
+    ],
+    correct: [0, 2, 3],
+    explanation:
+      "Tutorials, learning communities, and different perspectives can support learning. Popularity does not establish accuracy; information still needs to be evaluated against reliable sources.",
   },
   {
     id: 5,
     type: "challenge",
-    title: "How do you feel after spending time on social media?",
-    description:
-      "Energized, inspired, or a little drained? It’s worth noticing.",
-    insight:
-      "Different content and different ways of using social media can leave you feeling very differently. Paying attention to your own patterns can be more helpful than labeling all social media good or bad.",
-    prompt: "Think about your last scroll. How did you feel before and after?",
+    format: "boolean",
+    title: "A post with thousands of likes must contain accurate information.",
+    description: "Separate popularity from reliability.",
+    options: ["True", "False"],
+    correct: [1],
+    explanation:
+      "Likes indicate engagement, not fact-checking. Misleading posts can be popular. Checking the original source, evidence, date, and independent reliable reporting is a better way to assess a claim.",
   },
   {
     id: 6,
     type: "balance",
-    title: "Is your feed a place you actually want to be?",
-    description:
-      "A few intentional changes can make your digital space feel more like you.",
-    insight:
-      "You don’t have to keep following an account just because you once enjoyed it. Muting, unfollowing, and choosing “not interested” can help shape a feed that supports your interests and well-being.",
-    prompt: "What would you like to see more of—and less of—in your feed?",
+    format: "multiple",
+    title:
+      "Which action best helps assess an unfamiliar claim before sharing it?",
+    description: "Explore a practical media-literacy skill.",
+    options: [
+      "Trusting it because a friend shared it",
+      "Checking only the number of comments",
+      "Checking the original source and comparing reliable sources",
+      "Sharing it quickly before the trend ends",
+    ],
+    correct: [2],
+    explanation:
+      "Tracing a claim to its original source and checking independent, reliable sources helps assess its accuracy. Familiarity, comment counts, and urgency are not evidence that a claim is true.",
   },
   {
     id: 7,
     type: "positive",
-    title: "Has sharing online helped you express yourself?",
-    description:
-      "Creativity can start with one little post and a bit of courage.",
-    insight:
-      "Sharing art, ideas, or everyday experiences can be a creative outlet. Consider what feels satisfying about the process, separate from the likes and reactions it receives.",
-    prompt:
-      "What would you love to create or share, even if likes weren’t visible?",
+    format: "boolean",
+    title:
+      "Social media can help small businesses reach customers beyond their local area.",
+    description: "Explore opportunities created by online visibility.",
+    options: ["True", "False"],
+    correct: [0],
+    explanation:
+      "Social platforms can help small businesses showcase products and communicate with wider audiences. This creates opportunities, but it does not guarantee sales or business success.",
   },
   {
     id: 8,
     type: "challenge",
-    title: "Do notifications make it hard to be in the moment?",
-    description: "A small ping can pull your attention away from what matters.",
-    insight:
-      "Notifications invite us to switch attention, even when the update can wait. Choosing which alerts reach you is a small boundary that can make offline moments feel less interrupted.",
-    prompt:
-      "Which notifications genuinely help you? Which could you turn off today?",
+    format: "multiple",
+    title: "Why can social media encourage unrealistic comparisons?",
+    description: "Understand the difference between a feed and a full picture.",
+    options: [
+      "Feeds always show every part of a person’s life",
+      "Posts may show selected highlights rather than everyday reality",
+      "Every photo on social media is fake",
+      "All users have identical experiences",
+    ],
+    correct: [1],
+    explanation:
+      "People often share selected highlights. Comparing those highlights with an entire everyday life can create unrealistic expectations. This does not mean that every post is false or that everyone responds in the same way.",
   },
   {
     id: 9,
     type: "balance",
-    title: "What would a phone-free moment give back to you?",
-    description:
-      "A quieter morning, a better conversation, or simply room to breathe.",
-    insight:
-      "A boundary doesn’t have to mean quitting social media. A small, specific phone-free moment can create space for something you value without becoming an all-or-nothing rule.",
-    prompt:
-      "Choose one daily moment you’d like to protect. What will you do instead?",
+    format: "select",
+    title: "Which practices can support more balanced social media use?",
+    description: "Identify practical ways to reduce unnecessary interruptions.",
+    options: [
+      "Turning off non-essential notifications",
+      "Setting aside phone-free time for sleep or focused tasks",
+      "Keeping every notification on to avoid missing any update",
+      "Choosing specific times to check apps",
+    ],
+    correct: [0, 1, 3],
+    explanation:
+      "Reducing unnecessary notifications, protecting offline time, and checking apps intentionally can support balance. Keeping every alert active may add interruptions rather than reduce them.",
   },
   {
     id: 10,
     type: "positive",
-    title: "Can your online voice make a positive difference?",
-    description: "Small acts of support can travel further than you think.",
-    insight:
-      "Encouragement, sharing useful resources, and supporting causes can all start online. Before resharing a cause or fundraiser, check its source and think about what practical help is needed.",
-    prompt:
-      "What is one thoughtful action you could take in your online community?",
+    format: "multiple",
+    title: "Which example shows a constructive use of social media?",
+    description:
+      "Look at how online communication can support community action.",
+    options: [
+      "Posting someone’s address without permission",
+      "Sharing an unverified emergency rumor",
+      "Encouraging harassment of people who disagree",
+      "Sharing verified details about a community volunteer event",
+    ],
+    correct: [3],
+    explanation:
+      "Sharing verified event details can help communities organize and participate. Posting private information, spreading rumors, and encouraging harassment can cause harm.",
   },
   {
     id: 11,
     type: "challenge",
-    title: "How much of your life are you comfortable sharing?",
-    description:
-      "Your personal information deserves a little thought before you hit post.",
-    insight:
-      "Posts can reach beyond their original audience. Privacy settings help, but they can’t stop someone from taking a screenshot. Consider location details, personal information, and other people’s consent.",
-    prompt:
-      "What’s one thing you’d prefer to keep offline? Do your privacy settings match that choice?",
+    format: "select",
+    title: "Which actions can increase privacy risks on social media?",
+    description: "Understand how information can reach unintended audiences.",
+    options: [
+      "Posting a home address publicly",
+      "Reviewing who can see a post",
+      "Sharing live location details with a public audience",
+      "Posting another person’s private details without permission",
+    ],
+    correct: [0, 2, 3],
+    explanation:
+      "Public addresses, live location details, and other people’s private information can expose people to unwanted attention or misuse. Reviewing audience settings can help reduce exposure, though screenshots and resharing remain possible.",
   },
   {
     id: 12,
     type: "balance",
-    title: "Are you opening the app with a purpose—or out of habit?",
-    description:
-      "A tiny pause can turn an automatic scroll into an intentional choice.",
-    insight:
-      "Checking your phone can become a default response to boredom or a quiet moment. A short pause to ask “What am I here for?” can help you decide whether opening the app serves you right now.",
-    prompt:
-      "The next time you reach for your phone, what question could you ask yourself?",
+    format: "boolean",
+    title:
+      "Privacy settings guarantee that a post can never be copied or shared elsewhere.",
+    description: "Consider the limits of audience controls.",
+    options: ["True", "False"],
+    correct: [1],
+    explanation:
+      "Privacy settings help control who initially sees a post, but viewers may still take screenshots, copy it, or share it elsewhere. Audience controls cannot guarantee that information stays private.",
   },
 ];
-let storageAvailable = true;
+
+// Versioned keys keep new quiz data separate from the former personal reflections.
+const SAVED_KEY = "perspective-knowledge-v1-saved";
+const ANSWERS_KEY = "perspective-knowledge-v1-answers";
 const readStore = (key, fallback) => {
   try {
-    return JSON.parse(localStorage.getItem(key)) || fallback;
+    return JSON.parse(localStorage.getItem(key)) ?? fallback;
   } catch {
-    storageAvailable = false;
     return fallback;
   }
 };
-let saved = readStore("perspective-saved", []),
-  reflections = readStore("perspective-reflections", {});
-if (!Array.isArray(saved)) saved = [];
+const validSelection = (q, selection) =>
+  Array.isArray(selection) &&
+  selection.length > 0 &&
+  new Set(selection).size === selection.length &&
+  selection.every(
+    (i) => Number.isInteger(i) && i >= 0 && i < q.options.length,
+  ) &&
+  (q.format === "select" || selection.length === 1);
+const storedSaved = readStore(SAVED_KEY, []);
+let saved = Array.isArray(storedSaved)
+  ? [...new Set(storedSaved.filter((id) => questions.some((q) => q.id === id)))]
+  : [];
+const storedAnswers = readStore(ANSWERS_KEY, {});
+let answers = {};
 if (
-  !reflections ||
-  typeof reflections !== "object" ||
-  Array.isArray(reflections)
-)
-  reflections = {};
+  storedAnswers &&
+  typeof storedAnswers === "object" &&
+  !Array.isArray(storedAnswers)
+) {
+  for (const q of questions) {
+    if (validSelection(q, storedAnswers[q.id]))
+      answers[q.id] = storedAnswers[q.id];
+  }
+}
 let view = "explore",
   filter = "all",
   query = "",
   limit = 6;
-const grid = document.querySelector("#question-grid"),
-  modal = document.querySelector("#modal"),
-  content = document.querySelector("#modal-content");
+const grid = document.querySelector("#question-grid");
+const modal = document.querySelector("#modal");
+const content = document.querySelector("#modal-content");
 const escape = (s) =>
   String(s).replace(
     /[&<>"']/g,
@@ -188,16 +265,15 @@ const escape = (s) =>
         c
       ],
   );
+const isCorrect = (q, selection) =>
+  selection.length === q.correct.length &&
+  q.correct.every((i) => selection.includes(i));
 function persist() {
   try {
-    localStorage.setItem("perspective-saved", JSON.stringify(saved));
-    localStorage.setItem(
-      "perspective-reflections",
-      JSON.stringify(reflections),
-    );
+    localStorage.setItem(SAVED_KEY, JSON.stringify(saved));
+    localStorage.setItem(ANSWERS_KEY, JSON.stringify(answers));
     return true;
   } catch {
-    storageAvailable = false;
     return false;
   }
 }
@@ -210,10 +286,7 @@ function toast(message) {
   toastTimeout = setTimeout(() => el.classList.remove("visible"), 3200);
 }
 function render() {
-  document.querySelector("#reflection-count").textContent = new Set([
-    ...saved,
-    ...Object.keys(reflections).map(Number),
-  ]).size;
+  document.querySelector("#saved-count").textContent = saved.length;
   document
     .querySelector(".question-toolbar")
     .classList.toggle("view-hidden", view === "resources");
@@ -223,32 +296,43 @@ function render() {
   document
     .querySelector("#question-total")
     .classList.toggle("view-hidden", view !== "explore");
+  document.querySelector("#question-total").textContent =
+    `${Object.keys(answers).length} of ${questions.length} questions answered`;
   if (view === "resources") {
     renderResources();
     return;
   }
-  let list = questions.filter(
+  const list = questions.filter(
     (q) =>
-      (view !== "reflections" || saved.includes(q.id) || reflections[q.id]) &&
+      (view !== "saved" || saved.includes(q.id)) &&
       (filter === "all" || q.type === filter) &&
-      `${q.title} ${q.description}`.toLowerCase().includes(query),
+      `${q.title} ${q.description} ${formats[q.format].label}`
+        .toLowerCase()
+        .includes(query),
   );
   grid.innerHTML = list
     .slice(0, limit)
     .map((q) => {
-      const cat = categories[q.type];
-      return `<article class="question-card"><div class="card-top"><span class="badge ${q.type}">${icon(cat.icon)}${cat.label}</span><button class="icon-button ${saved.includes(q.id) ? "saved" : ""}" data-save="${q.id}" aria-label="${saved.includes(q.id) ? "Unsave" : "Save"} question: ${escape(q.title)}" aria-pressed="${saved.includes(q.id)}">${icon("bookmark")}</button></div><h3>${q.title}</h3><p>${q.description}</p>${view === "reflections" && reflections[q.id] ? `<p class="reflected-text">${escape(reflections[q.id])}</p>` : ""}<div class="card-bottom"><span>${icon(reflections[q.id] ? "check" : "clock")}${reflections[q.id] ? "Reflection added" : "2 min reflection"}</span><button data-question="${q.id}">${reflections[q.id] ? "Keep reflecting" : "Let’s reflect"} ${icon("arrow-right")}</button></div></article>`;
+      const cat = categories[q.type],
+        answered = Boolean(answers[q.id]);
+      return `<article class="question-card">
+      <div class="card-top"><span class="badge ${q.type}">${icon(cat.icon)}${cat.label}</span>
+        <button class="icon-button ${saved.includes(q.id) ? "saved" : ""}" data-save="${q.id}" aria-label="${saved.includes(q.id) ? "Unsave" : "Save"} question: ${escape(q.title)}" aria-pressed="${saved.includes(q.id)}">${icon("bookmark")}</button></div>
+      <h3>${q.title}</h3><p>${q.description}</p>
+      <div class="card-bottom"><span>${icon(answered ? "check" : "book")}${formats[q.format].label}</span>
+        <button data-question="${q.id}">${answered ? "Review answer" : "Answer question"} ${icon("arrow-right")}</button></div>
+    </article>`;
     })
     .join("");
   document.querySelector("#empty-state").hidden = list.length > 0;
   document.querySelector("#empty-title").textContent =
-    view === "reflections" && !query && filter === "all"
-      ? "Your next insight starts here."
+    view === "saved" && !query && filter === "all"
+      ? "No saved questions yet."
       : "No questions found.";
   document.querySelector("#empty-copy").textContent =
-    view === "reflections" && !query && filter === "all"
-      ? "Save a question with the bookmark icon, or write a reflection. You’ll find it here."
-      : "Try another search or explore a different perspective.";
+    view === "saved" && !query && filter === "all"
+      ? "Use the bookmark icon to save a question for later."
+      : "Try another search or explore a different topic.";
   document.querySelector("#load-more").hidden = list.length <= limit;
   document.querySelector("#showing-count").textContent = list.length
     ? `Showing ${Math.min(limit, list.length)} of ${list.length} questions`
@@ -268,26 +352,32 @@ function setView(next) {
     .querySelectorAll("[data-view]")
     .forEach((el) => el.classList.toggle("active", el.dataset.view === view));
   document.querySelector("#section-title").textContent = {
-    explore: "A question can change your perspective.",
-    reflections: "A little space for your perspective.",
+    explore: "A question can change a perspective.",
+    saved: "Good questions are worth revisiting.",
     resources: "Good reads. Thoughtful next steps.",
   }[view];
   document.querySelector("#section-description").textContent = {
     explore:
-      "There are no perfect answers. Just a chance to get to know your digital self.",
-    reflections:
-      "Your saved questions and personal reflections. Stored only in this browser.",
+      "Explore the facts with multiple-choice, select-all-that-apply, and true/false questions.",
+    saved:
+      "Bookmarked questions, ready to revisit. Saved only in this browser.",
     resources:
-      "Explore practical guidance for a more intentional relationship with social media.",
+      "Explore practical guidance on digital well-being, online safety, and media literacy.",
   }[view];
   render();
   document.querySelector("#questions").scrollIntoView({ behavior: "smooth" });
 }
 function openModal(html) {
   content.innerHTML = html;
+  const heading = content.querySelector("h2");
+  if (heading) {
+    heading.id = "modal-title";
+    heading.tabIndex = -1;
+  }
   if (!modal.open) modal.showModal();
   modal.scrollTop = 0;
   document.body.style.overflow = "hidden";
+  heading?.focus({ preventScroll: true });
 }
 function closeModal() {
   modal.close();
@@ -296,50 +386,151 @@ function closeModal() {
 document.querySelector("#close-modal").onclick = closeModal;
 modal.addEventListener("close", () => (document.body.style.overflow = ""));
 modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    const r = modal.getBoundingClientRect();
-    if (
-      e.clientX < r.left ||
-      e.clientX > r.right ||
-      e.clientY < r.top ||
-      e.clientY > r.bottom
-    )
-      closeModal();
-  }
+  if (e.target !== modal) return;
+  const r = modal.getBoundingClientRect();
+  if (
+    e.clientX < r.left ||
+    e.clientX > r.right ||
+    e.clientY < r.top ||
+    e.clientY > r.bottom
+  )
+    closeModal();
 });
-function openQuestion(id) {
-  const q = questions.find((q) => q.id === id),
-    cat = categories[q.type];
-  openModal(
-    `<span class="badge ${q.type}">${icon(cat.icon)}${cat.label}</span><h2>${q.title}</h2><p>${q.description}</p><div class="insight"><strong>A little perspective</strong><br>${q.insight}</div><label for="reflection-input">${q.prompt}</label><textarea id="reflection-input" maxlength="3000" placeholder="Your thoughts, in your own words…">${escape(reflections[q.id] || "")}</textarea><div class="modal-actions"><span class="privacy-note">Just for you. Saved in this browser.</span><button class="button primary" id="save-reflection">Save reflection ${icon("arrow-right")}</button></div>${reflections[q.id] ? '<button class="text-button" id="delete-reflection">Delete this reflection</button>' : ""}`,
-  );
-  document.querySelector("#save-reflection").onclick = () => {
-    const value = document.querySelector("#reflection-input").value.trim();
-    if (!value) {
-      toast("Add a thought before saving.");
-      document.querySelector("#reflection-input").focus();
+
+// The same answer form serves individual practice and the full knowledge quiz.
+let quizAttempts = [],
+  quizStep = 0;
+function showQuestion(q, attempt, inQuiz = false) {
+  const cat = categories[q.type],
+    format = formats[q.format];
+  const result = attempt.submitted ? isCorrect(q, attempt.selected) : null;
+  openModal(`
+    ${inQuiz ? `<div class="eyebrow">KNOWLEDGE QUIZ · ${quizStep + 1} OF ${questions.length}</div><div class="quiz-progress" aria-hidden="true">${questions.map((_, i) => `<i class="${i <= quizStep ? "done" : ""}"></i>`).join("")}</div>` : ""}
+    <span class="badge ${q.type}">${icon(cat.icon)}${cat.label}</span>
+    <h2>${q.title}</h2><p class="question-format">${format.label}</p>
+    <form id="answer-form" novalidate>
+      <fieldset class="answer-options" aria-describedby="answer-error" ${attempt.submitted ? "disabled" : ""}>
+        <legend>${format.instruction}</legend>
+        ${q.options
+          .map(
+            (
+              option,
+              i,
+            ) => `<label class="answer-option ${attempt.submitted && q.correct.includes(i) ? "correct-option" : ""} ${attempt.submitted && attempt.selected.includes(i) && !q.correct.includes(i) ? "incorrect-option" : ""}">
+          <input type="${q.format === "select" ? "checkbox" : "radio"}" name="answer" value="${i}" ${attempt.selected.includes(i) ? "checked" : ""}>
+          <span>${escape(option)}${attempt.submitted ? `<small>${q.correct.includes(i) ? "Correct answer" : ""}${q.correct.includes(i) && attempt.selected.includes(i) ? " · " : ""}${attempt.selected.includes(i) ? "Selected" : ""}</small>` : ""}</span>
+        </label>`,
+          )
+          .join("")}
+      </fieldset>
+      <p id="answer-error" class="answer-error" role="alert"></p>
+      ${
+        attempt.submitted
+          ? `<section class="answer-feedback ${result ? "is-correct" : "is-incorrect"}" id="answer-feedback" tabindex="-1" aria-labelledby="feedback-heading">
+        <h3 id="feedback-heading">${result ? "Correct!" : "Not quite. Here’s why."}</h3>
+        <p><strong>${q.correct.length > 1 ? "Correct answers" : "Correct answer"}:</strong> ${q.correct.map((i) => escape(q.options[i])).join("; ")}</p>
+        <p>${q.explanation}</p>
+      </section>`
+          : ""
+      }
+      <div class="modal-actions">
+        ${inQuiz && quizStep > 0 ? '<button class="text-button" type="button" id="quiz-back">← Previous question</button>' : '<span class="privacy-note">General knowledge. No personal questions.</span>'}
+        ${!attempt.submitted ? '<button class="button primary" type="submit" id="check-answer">Check answer</button>' : inQuiz ? `<button class="button primary" type="button" id="quiz-next">${quizStep === questions.length - 1 ? "See results" : "Next question"} ${icon("arrow-right")}</button>` : '<button class="button primary" type="button" id="retry-question">Try again</button>'}
+      </div>
+    </form>
+  `);
+  const form = content.querySelector("#answer-form");
+  form.addEventListener("change", () => {
+    if (attempt.submitted) return;
+    attempt.selected = [...form.querySelectorAll("input:checked")].map(
+      (input) => Number(input.value),
+    );
+    content.querySelector("#answer-error").textContent = "";
+  });
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (attempt.submitted) return;
+    attempt.selected = [...form.querySelectorAll("input:checked")].map(
+      (input) => Number(input.value),
+    );
+    if (!validSelection(q, attempt.selected)) {
+      content.querySelector("#answer-error").textContent =
+        q.format === "select"
+          ? "Select at least one answer before checking."
+          : "Choose an answer before checking.";
+      form.querySelector("input").focus();
       return;
     }
-    reflections[id] = value;
+    attempt.submitted = true;
+    answers[q.id] = [...attempt.selected];
     const stored = persist();
     render();
-    closeModal();
-    toast(
-      stored
-        ? "A little clarity, saved."
-        : "Saved for this visit only. Browser storage is unavailable.",
-    );
-  };
-  const deleteButton = document.querySelector("#delete-reflection");
-  if (deleteButton)
-    deleteButton.onclick = () => {
-      delete reflections[id];
-      persist();
-      render();
-      closeModal();
-      toast("Reflection deleted.");
+    showQuestion(q, attempt, inQuiz);
+    content.querySelector("#answer-feedback").focus();
+    if (!stored)
+      toast(
+        "Progress saved for this visit only. Browser storage is unavailable.",
+      );
+  });
+  const back = content.querySelector("#quiz-back");
+  if (back)
+    back.onclick = () => {
+      quizStep--;
+      showQuiz();
     };
+  const next = content.querySelector("#quiz-next");
+  if (next)
+    next.onclick = () => {
+      if (quizStep === questions.length - 1) showResult();
+      else {
+        quizStep++;
+        showQuiz();
+      }
+    };
+  const retry = content.querySelector("#retry-question");
+  if (retry)
+    retry.onclick = () => showQuestion(q, { selected: [], submitted: false });
 }
+function openQuestion(id) {
+  const q = questions.find((q) => q.id === id);
+  showQuestion(q, {
+    selected: [...(answers[id] || [])],
+    submitted: Boolean(answers[id]),
+  });
+}
+function startQuiz() {
+  quizAttempts = questions.map(() => ({ selected: [], submitted: false }));
+  quizStep = 0;
+  showQuiz();
+}
+function showQuiz() {
+  showQuestion(questions[quizStep], quizAttempts[quizStep], true);
+}
+function showResult() {
+  const score = questions.filter((q, i) =>
+    isCorrect(q, quizAttempts[i].selected),
+  ).length;
+  openModal(`<div class="eyebrow">KNOWLEDGE QUIZ COMPLETE</div><h2>${score === questions.length ? "A well-rounded perspective!" : "Every question is a chance to learn."}</h2>
+    <div class="quiz-score"><strong>${score} / ${questions.length}</strong><span>questions correct</span></div>
+    <p>One point per correct question. Select-all questions require all correct options and no extras. Review the explanations below to keep learning.</p>
+    <div class="quiz-review">${questions
+      .map(
+        (
+          q,
+          i,
+        ) => `<details><summary>${icon(isCorrect(q, quizAttempts[i].selected) ? "check" : "x")}<span>${i + 1}. ${q.title}<small>${isCorrect(q, quizAttempts[i].selected) ? "Correct" : "Incorrect"} · ${formats[q.format].label}</small></span></summary>
+      <p><strong>Selected:</strong> ${quizAttempts[i].selected.map((n) => escape(q.options[n])).join("; ")}</p>
+      <p><strong>Correct:</strong> ${q.correct.map((n) => escape(q.options[n])).join("; ")}</p><p>${q.explanation}</p></details>`,
+      )
+      .join("")}</div>
+    <div class="modal-actions"><button class="text-button" id="quiz-restart">Retake quiz</button><button class="button primary" id="finish-quiz">Explore questions ${icon("arrow-right")}</button></div>`);
+  content.querySelector("#quiz-restart").onclick = startQuiz;
+  content.querySelector("#finish-quiz").onclick = () => {
+    closeModal();
+    setView("explore");
+  };
+}
+
 grid.addEventListener("click", (e) => {
   const save = e.target.closest("[data-save]"),
     question = e.target.closest("[data-question]");
@@ -351,8 +542,8 @@ grid.addEventListener("click", (e) => {
     toast(
       stored
         ? saved.includes(id)
-          ? "Question saved to My reflections."
-          : "Question removed from saved."
+          ? "Question saved for later."
+          : "Bookmark removed."
         : "Updated for this visit only. Browser storage is unavailable.",
     );
   }
@@ -395,33 +586,36 @@ document.addEventListener("keydown", (e) => {
   }
 });
 document.querySelector("#how-button").onclick = () =>
-  openModal(
-    `<div class="eyebrow">A LITTLE SPACE TO THINK</div><h2>Curiosity, without the judgment.</h2><p>Social media isn’t all good or all bad. Perspective helps you explore what it means for you.</p><ol class="steps"><li><h3>Find a question</h3><p>Explore the positives, the challenges, or the space in between.</p></li><li><h3>Pause and reflect</h3><p>Read a fresh perspective, then put your own thoughts into words. There’s no right answer.</p></li><li><h3>Make it your own</h3><p>Save what resonates and try one small change. Your reflections stay in this browser, not an account. Clearing browser data removes them.</p></li></ol><button class="button primary" id="start-exploring">Find my first question ${icon("arrow-right")}</button>`,
-  );
+  openModal(`<div class="eyebrow">LEARN BOTH SIDES</div><h2>A little knowledge. A broader perspective.</h2><p>Explore general facts about social media’s benefits, risks, and responsible use. No personal experiences or private information needed.</p>
+  <ol class="steps"><li><h3>Choose a question</h3><p>Browse by topic or take the full 12-question knowledge quiz.</p></li><li><h3>Select an answer</h3><p>Choose one answer for multiple-choice and true/false questions. For select-all-that-apply questions, choose every correct option and no incorrect options.</p></li><li><h3>Learn from the explanation</h3><p>Check an answer for feedback, then keep exploring. Bookmarks and the latest checked answers stay in this browser. Clearing site data removes them.</p></li></ol>
+  <button class="button primary" id="start-exploring">Explore questions ${icon("arrow-right")}</button>`);
 content.addEventListener("click", (e) => {
   if (e.target.closest("#start-exploring")) {
     closeModal();
     setView("explore");
   }
 });
+document
+  .querySelectorAll("[data-quiz]")
+  .forEach((b) => (b.onclick = startQuiz));
 const resources = [
   {
     label: "DIGITAL WELL-BEING",
-    title: "Make your phone work for you.",
+    title: "Tools for digital well-being.",
     text: "Explore tools and everyday ideas for more intentional technology use.",
     name: "Google Digital Wellbeing",
     url: "https://wellbeing.google/",
   },
   {
     label: "ONLINE SAFETY",
-    title: "Feel safer in your digital space.",
+    title: "Understand online safety.",
     text: "Find guidance on privacy, online bullying, and navigating difficult experiences.",
     name: "eSafety Commissioner",
     url: "https://www.esafety.gov.au/",
   },
   {
     label: "MEDIA LITERACY",
-    title: "Bring a critical eye to your feed.",
+    title: "Learn to evaluate online information.",
     text: "Explore resources about digital citizenship, online information, and media habits.",
     name: "Common Sense Education",
     url: "https://www.commonsense.org/education/digital-citizenship",
@@ -436,109 +630,6 @@ function renderResources() {
     )
     .join("");
 }
-const quiz = [
-  {
-    title: "How do you usually feel after a scroll?",
-    options: [
-      "Inspired or connected",
-      "It depends on the day",
-      "Drained or not quite myself",
-    ],
-  },
-  {
-    title: "How often does your phone interrupt what matters?",
-    options: [
-      "Rarely—I have a rhythm that works",
-      "Sometimes, more than I’d like",
-      "Often—it’s hard to switch off",
-    ],
-  },
-  {
-    title: "Does your feed reflect what you care about?",
-    options: [
-      "Mostly—it feels like my kind of space",
-      "Some of it, but it could use a refresh",
-      "Not really—I scroll on autopilot",
-    ],
-  },
-  {
-    title: "How easy is it to step away when you want to?",
-    options: [
-      "Usually pretty easy",
-      "Easier some days than others",
-      "Honestly, it can be difficult",
-    ],
-  },
-];
-let quizAnswers = [],
-  quizStep = 0;
-function showQuiz() {
-  const q = quiz[quizStep];
-  openModal(
-    `<div class="eyebrow">YOUR GENTLE CHECK-IN · ${quizStep + 1} OF ${quiz.length}</div><div class="quiz-progress">${quiz.map((_, i) => `<i class="${i <= quizStep ? "done" : ""}"></i>`).join("")}</div><h2>${q.title}</h2><p>Think about the past week. Pick the answer that feels closest.</p><div class="quiz-options">${q.options.map((o, i) => `<button class="quiz-option ${quizAnswers[quizStep] === i ? "selected" : ""}" data-answer="${i}">${o}</button>`).join("")}</div><div class="modal-actions">${quizStep ? '<button class="text-button" id="quiz-back">← Previous question</button>' : '<span class="privacy-note">No scores. No labels. Just a little awareness.</span>'}</div>`,
-  );
-  content.querySelectorAll("[data-answer]").forEach(
-    (b) =>
-      (b.onclick = () => {
-        quizAnswers[quizStep] = Number(b.dataset.answer);
-        if (quizStep < quiz.length - 1) {
-          quizStep++;
-          showQuiz();
-        } else showResult();
-      }),
-  );
-  const back = content.querySelector("#quiz-back");
-  if (back)
-    back.onclick = () => {
-      quizStep--;
-      showQuiz();
-    };
-}
-function showResult() {
-  const total = quizAnswers.reduce((a, b) => a + b, 0);
-  const title =
-    total <= 2
-      ? "Keep what’s working for you."
-      : total <= 5
-        ? "A little intention can go a long way."
-        : "You deserve a little breathing room.";
-  const intro =
-    total <= 2
-      ? "It sounds like social media often adds something positive to your day. Keep noticing the habits that help you feel that way."
-      : total <= 5
-        ? "There’s some good in your feed, and some room to make it feel better. You don’t need a complete reset—start small."
-        : "Your answers suggest that being online can feel demanding lately. You don’t have to change everything at once. Give yourself permission to make a little space.";
-  const tips = [
-    quizAnswers[0] > 0
-      ? "Notice how you feel before and after your next scroll."
-      : "Reach out to someone who makes your online time feel meaningful.",
-    quizAnswers[1] > 0
-      ? "Switch off one non-essential notification today."
-      : "Protect a phone-free moment that already works for you.",
-    quizAnswers[2] > 0
-      ? "Mute one account that drains you and find one that inspires you."
-      : "Keep curating your feed as your interests change.",
-    quizAnswers[3] > 0
-      ? "Try leaving your phone out of reach for one meal."
-      : "Choose a clear intention before you open an app.",
-  ];
-  openModal(
-    `<span class="badge balance">${icon("leaf")} Your moment of perspective</span><h2>${title}</h2><p>${intro}</p><div class="insight"><strong>A few small things to try</strong><ul class="result-list">${tips.map((t) => `<li>${t}</li>`).join("")}</ul></div><p class="privacy-note">This is a personal reflection, not a mental health assessment. If social media is affecting your daily life or well-being, consider talking with someone you trust or a qualified professional.</p><div class="modal-actions"><button class="button primary" id="balance-questions">Explore finding balance ${icon("arrow-right")}</button><button class="text-button" id="quiz-restart">Start again</button></div>`,
-  );
-  content.querySelector("#balance-questions").onclick = () => {
-    closeModal();
-    setView("explore");
-    document.querySelector('[data-filter="balance"]').click();
-  };
-  content.querySelector("#quiz-restart").onclick = startQuiz;
-}
-function startQuiz() {
-  quizAnswers = [];
-  quizStep = 0;
-  showQuiz();
-}
-document
-  .querySelectorAll("[data-check]")
-  .forEach((b) => (b.onclick = startQuiz));
+
 hydrate();
 render();
