@@ -107,7 +107,10 @@ test("multiple-choice questions enforce one selection, validate empty submission
   assert.equal(s.$("#answer-error").textContent, "");
   s.submit();
   assert.equal(s.$("#feedback-heading").textContent, "Correct!");
-  assert.match(s.$("#answer-feedback").textContent, /geographic boundaries/);
+  assert.match(
+    s.$("#answer-feedback").textContent,
+    /people who live far apart/,
+  );
   assert.equal(s.$("fieldset").disabled, true);
   assert.equal(s.window.document.activeElement.id, "answer-feedback");
   s.$("#retry-question").click();
@@ -305,5 +308,27 @@ test("blocked storage still allows answering and saving for the current visit", 
   s.$("#close-modal").click();
   s.$('[data-view="saved"]').click();
   assert.equal(s.$$(".question-card").length, 1);
+  s.close();
+});
+
+test("simple wording stays consistent across pages and quiz instructions", () => {
+  const s = setup();
+  const title = s.$("#section-title").textContent;
+  const description = s
+    .$("#section-description")
+    .textContent.replace(/\s+/g, " ")
+    .trim();
+  assert.equal(title, "Learn about social media.");
+  assert.equal(s.$(".header-check").textContent.trim(), "Take the quiz");
+  s.$('[data-view="resources"]').click();
+  assert.equal(s.$("#section-title").textContent, "Learn more.");
+  s.$('[data-view="explore"]').click();
+  assert.equal(s.$("#section-title").textContent, title);
+  assert.equal(s.$("#section-description").textContent, description);
+  s.$('[data-question="2"]').click();
+  assert.equal(
+    s.$("legend").textContent,
+    "Choose all the right answers. Do not choose any wrong answers.",
+  );
   s.close();
 });

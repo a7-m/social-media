@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#f7f8f2" />
     <meta
       name="description"
-      content="Explore the good, the challenging, and the in-between of social media. General-knowledge quizzes about the positives, negatives, and responsible use of social media."
+      content="Simple questions about the good and bad sides of social media. Try multiple-choice, select-all-that-apply, and true/false quizzes."
     />
     <title>Perspective — Let's talk about social media</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,30 +27,30 @@
       >
       <nav aria-label="Main navigation">
         <button class="nav-link active" data-view="explore">
-          Explore questions</button
+          View questions</button
         ><button class="nav-link" data-view="saved">
           Saved questions <span id="saved-count">0</span></button
-        ><button class="nav-link" data-view="resources">Resources</button>
+        ><button class="nav-link" data-view="resources">Learn more</button>
       </nav>
       <button class="button header-check" data-quiz>
-        Take the knowledge quiz <span data-icon="arrow-up-right"></span>
+        Take the quiz <span data-icon="arrow-up-right"></span>
       </button>
     </header>
     <main>
       <section class="hero" id="hero">
         <div class="hero-copy">
           <div class="eyebrow">
-            <span class="small-dot"></span> A LITTLE PERSPECTIVE GOES A LONG WAY
+            <span class="small-dot"></span> LEARN ABOUT THE GOOD AND BAD SIDES
           </div>
           <h1>Let’s talk about<br /><span>social media.</span></h1>
           <p>
-            It connects communities. It creates challenges.<br />Explore social
-            media’s positives and negatives<br class="desktop-break" />
-            through questions, facts, and clear explanations.
+            Social media can help people. It can also cause problems.<br />
+            Learn about the good and bad sides<br class="desktop-break" />
+            with simple questions and clear answers.
           </p>
           <div class="hero-actions">
             <button class="button primary" id="explore-button">
-              Explore the questions
+              View questions
               <span data-icon="arrow-right"></span></button
             ><button class="text-button" id="how-button">
               <span class="play-icon" data-icon="play"></span> How it works
@@ -60,14 +60,13 @@
             <span class="format-icons" aria-hidden="true"
               ><b>A</b><b>✓</b><b>T/F</b></span
             ><span
-              >Three question formats.
-              <strong>One broader perspective.</strong></span
+              >Three question types. <strong>Learn something new.</strong></span
             >
           </div>
         </div>
         <div
           class="hero-art"
-          aria-label="Illustration of a social media phone with the positive side and the challenging side"
+          aria-label="A phone showing the good and bad sides of social media"
           role="img"
         >
           <svg viewBox="0 0 570 430" xmlns="http://www.w3.org/2000/svg">
@@ -186,7 +185,7 @@
                 font-weight="600"
                 fill="#fff"
               >
-                More connection
+                Stay connected
               </text>
               <text
                 x="69"
@@ -195,7 +194,7 @@
                 font-size="11"
                 fill="#d6e1cf"
               >
-                Find your people. Feel seen.
+                Meet people. Share ideas.
               </text>
             </g>
             <g transform="rotate(6 428 282)">
@@ -223,7 +222,7 @@
                 font-weight="600"
                 fill="#684939"
               >
-                More comparison
+                Compare lives
               </text>
               <text
                 x="358"
@@ -283,40 +282,40 @@
               stroke-width="1.5"
             />
           </svg>
-          <div class="art-caption">Same platform. Different perspectives.</div>
+          <div class="art-caption">Social media has good and bad sides.</div>
         </div>
       </section>
-      <section class="values-strip" aria-label="Our approach">
+      <section class="values-strip" aria-label="Topics">
         <div>
           <span data-icon="sun"></span
           ><span
-            ><strong>The positives</strong
-            ><small>Connection, creativity & opportunity</small></span
+            ><strong>The good side</strong
+            ><small>Friends, ideas & learning</small></span
           >
         </div>
         <div>
           <span data-icon="cloud"></span
           ><span
-            ><strong>The challenges</strong
-            ><small>Comparison, pressure & overload</small></span
+            ><strong>The bad side</strong
+            ><small>Bullying, false news & stress</small></span
           >
         </div>
         <div>
           <span data-icon="balance"></span
           ><span
-            ><strong>Finding balance</strong
-            ><small>Awareness, boundaries & better habits</small></span
+            ><strong>Healthy habits</strong
+            ><small>Safety, breaks & better habits</small></span
           >
         </div>
       </section>
       <section class="questions-section" id="questions">
         <div class="section-heading">
           <div>
-            <div class="eyebrow">EXPLORE. ANSWER. UNDERSTAND.</div>
-            <h2 id="section-title">A question can change a perspective.</h2>
+            <div class="eyebrow">READ. ANSWER. LEARN.</div>
+            <h2 id="section-title">Learn about social media.</h2>
             <p id="section-description">
-              Explore the facts with multiple-choice, select-all-that-apply, and
-              true/false questions.
+              Try multiple-choice, select-all-that-apply, and true/false
+              questions.
             </p>
           </div>
           <span class="question-total" id="question-total"
@@ -328,11 +327,11 @@
             <button class="tab active" data-filter="all">
               All questions <span>12</span></button
             ><button class="tab" data-filter="positive">
-              <span data-icon="sun"></span> The positives</button
+              <span data-icon="sun"></span> The good side</button
             ><button class="tab" data-filter="challenge">
-              <span data-icon="cloud"></span> The challenges</button
+              <span data-icon="cloud"></span> The bad side</button
             ><button class="tab" data-filter="balance">
-              <span data-icon="balance"></span> Finding balance
+              <span data-icon="balance"></span> Healthy habits
             </button>
           </div>
           <label class="search"
@@ -349,24 +348,21 @@
         <div id="empty-state" hidden>
           <span data-icon="book"></span>
           <h3 id="empty-title">Nothing here just yet.</h3>
-          <p id="empty-copy">
-            Try another search or explore a different perspective.
-          </p>
+          <p id="empty-copy">Try a different search or topic.</p>
         </div>
         <div class="load-row">
           <button class="button load-button" id="load-more">
-            More food for thought <span data-icon="arrow-down"></span></button
+            More questions <span data-icon="arrow-down"></span></button
           ><span id="showing-count">Showing 6 of 12 questions</span>
         </div>
       </section>
       <section class="check-banner">
         <div class="banner-icon" data-icon="leaf"></div>
         <div>
-          <div class="eyebrow">THREE FORMATS. A BROADER PERSPECTIVE.</div>
-          <h2>What are the positives and negatives of social media?</h2>
+          <div class="eyebrow">12 QUESTIONS. THREE QUESTION TYPES.</div>
+          <h2>Ready to try the quiz?</h2>
           <p>
-            12 general-knowledge questions. Clear answers. Something new to
-            learn.
+            Answer 12 questions about the good and bad sides of social media.
           </p>
         </div>
         <button class="button primary" data-quiz>
@@ -380,9 +376,9 @@
             >.</span
           ></a
         >
-        <p>A space for curiosity, not judgment.</p>
+        <p>A place to ask questions and learn.</p>
         <span
-          >Made for a more mindful scroll <span data-icon="leaf"></span
+          >Learn to use social media safely <span data-icon="leaf"></span
         ></span>
       </footer>
     </main>

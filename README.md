@@ -18,6 +18,8 @@ npm run build
 
 ## Features
 
+- Simple English, short questions, and clear answer explanations
+
 - Twelve general-knowledge questions: four multiple-choice, four select-all-that-apply, and four true/false
 - Topic filters, question and format search, and progressive loading
 - Native radio buttons for single-answer questions and checkboxes for select-all questions

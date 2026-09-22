@@ -23,16 +23,16 @@ const hydrate = () =>
     .querySelectorAll("[data-icon]")
     .forEach((el) => (el.innerHTML = icon(el.dataset.icon)));
 const categories = {
-  positive: { label: "The positives", icon: "sun" },
-  challenge: { label: "The challenges", icon: "cloud" },
-  balance: { label: "Finding balance", icon: "balance" },
+  positive: { label: "The good side", icon: "sun" },
+  challenge: { label: "The bad side", icon: "cloud" },
+  balance: { label: "Healthy habits", icon: "balance" },
 };
 const formats = {
   multiple: { label: "Multiple choice", instruction: "Choose one answer." },
   select: {
     label: "Select all that apply",
     instruction:
-      "Select all correct answers. Full credit requires every correct option and no incorrect options.",
+      "Choose all the right answers. Do not choose any wrong answers.",
   },
   boolean: { label: "True / false", instruction: "Choose true or false." },
 };
@@ -41,178 +41,173 @@ const questions = [
     id: 1,
     type: "positive",
     format: "multiple",
-    title: "Which is a potential benefit of social media?",
-    description: "Explore how online platforms can bring communities together.",
+    title: "What is one good thing about social media?",
+    description: "Learn how social media can bring people together.",
     options: [
-      "Guaranteeing that all information is accurate",
-      "Connecting people with shared interests across distances",
-      "Removing the need for offline relationships",
-      "Preventing all disagreements",
+      "Making every post true",
+      "Connecting people who like the same things, even far away",
+      "Replacing all face-to-face friendships",
+      "Stopping people from ever disagreeing",
     ],
     correct: [1],
     explanation:
-      "Social media can connect people across geographic boundaries and help communities form around shared interests. It does not guarantee accurate information, replace offline relationships, or eliminate disagreements.",
+      "Social media can connect people who live far apart. It helps them find others who like the same things. But not every post is true. Online contact does not replace all face-to-face friendships.",
   },
   {
     id: 2,
     type: "challenge",
     format: "select",
-    title: "Which are potential risks of social media use?",
-    description: "Identify challenges that can arise on social platforms.",
+    title: "What problems can social media cause?",
+    description: "Learn about some of the risks of social media.",
     options: [
-      "Cyberbullying and harassment",
-      "Exposure to misleading information",
-      "Access to educational communities",
-      "Sharing personal information beyond its intended audience",
+      "Bullying people online",
+      "Spreading false information",
+      "Joining groups that help people learn",
+      "Sharing private details with people who should not see them",
     ],
     correct: [0, 1, 3],
     explanation:
-      "Harassment, misinformation, and unintended exposure of personal information are potential risks. Access to educational communities is a potential benefit, not a risk in itself. Experiences vary by platform, content, and how people use it.",
+      "Online bullying, false information, and sharing private details can cause harm. Groups that help people learn are a good use of social media. Not everyone has the same experience online.",
   },
   {
     id: 3,
     type: "balance",
     format: "boolean",
-    title: "There is one ideal daily social media time limit for everyone.",
-    description:
-      "Consider whether healthy use can be defined by a single number.",
+    title: "The same daily time limit for social media works for everyone.",
+    description: "Think about whether one rule can suit all people.",
     options: ["True", "False"],
     correct: [1],
     explanation:
-      "No single time limit suits everyone. Age, needs, content, and context matter, as does whether social media interferes with sleep, responsibilities, or relationships.",
+      "People have different ages, needs, and daily routines. One time limit does not work for everyone. Social media should not get in the way of sleep, work, or friendships.",
   },
   {
     id: 4,
     type: "positive",
     format: "select",
-    title: "How can social media support learning?",
-    description: "Recognize constructive ways to share knowledge online.",
+    title: "How can social media help people learn?",
+    description: "Find ways that social media can support learning.",
     options: [
-      "Sharing educational tutorials",
-      "Making popular posts automatically reliable",
-      "Connecting learners with knowledgeable communities",
-      "Introducing different perspectives",
+      "Sharing videos that teach new skills",
+      "Making a post true just because it is popular",
+      "Connecting people with others who can teach them",
+      "Sharing different ideas and views",
     ],
     correct: [0, 2, 3],
     explanation:
-      "Tutorials, learning communities, and different perspectives can support learning. Popularity does not establish accuracy; information still needs to be evaluated against reliable sources.",
+      "Videos, learning groups, and new ideas can help people learn. But a popular post is not always true. It is important to check where the information comes from.",
   },
   {
     id: 5,
     type: "challenge",
     format: "boolean",
-    title: "A post with thousands of likes must contain accurate information.",
-    description: "Separate popularity from reliability.",
+    title: "A post with thousands of likes must be true.",
+    description: "Think about what likes do—and do not—mean.",
     options: ["True", "False"],
     correct: [1],
     explanation:
-      "Likes indicate engagement, not fact-checking. Misleading posts can be popular. Checking the original source, evidence, date, and independent reliable reporting is a better way to assess a claim.",
+      "Likes do not prove that a post is true. False posts can get lots of likes too. Check who posted it, when it was posted, and what trusted sources say.",
   },
   {
     id: 6,
     type: "balance",
     format: "multiple",
-    title:
-      "Which action best helps assess an unfamiliar claim before sharing it?",
-    description: "Explore a practical media-literacy skill.",
+    title: "What is the best way to check if a post is true?",
+    description: "Learn what to check before sharing a post.",
     options: [
-      "Trusting it because a friend shared it",
-      "Checking only the number of comments",
-      "Checking the original source and comparing reliable sources",
-      "Sharing it quickly before the trend ends",
+      "Trust it because a friend shared it",
+      "Look only at how many comments it has",
+      "Find where it came from and check other trusted sources",
+      "Share it quickly while it is popular",
     ],
     correct: [2],
     explanation:
-      "Tracing a claim to its original source and checking independent, reliable sources helps assess its accuracy. Familiarity, comment counts, and urgency are not evidence that a claim is true.",
+      "Find where the information first came from. Then check if other trusted sources agree, such as official health websites. A friend sharing a post does not prove it is true.",
   },
   {
     id: 7,
     type: "positive",
     format: "boolean",
-    title:
-      "Social media can help small businesses reach customers beyond their local area.",
-    description: "Explore opportunities created by online visibility.",
+    title: "Social media can help small shops reach people in other towns.",
+    description: "Learn how social media can help small businesses.",
     options: ["True", "False"],
     correct: [0],
     explanation:
-      "Social platforms can help small businesses showcase products and communicate with wider audiences. This creates opportunities, but it does not guarantee sales or business success.",
+      "Small shops can show their products to people in many places. This can help them find new customers. But posting online does not mean people will buy something.",
   },
   {
     id: 8,
     type: "challenge",
     format: "multiple",
-    title: "Why can social media encourage unrealistic comparisons?",
-    description: "Understand the difference between a feed and a full picture.",
+    title: "Why can social media make other people’s lives look perfect?",
+    description: "A post may not show the whole story.",
     options: [
-      "Feeds always show every part of a person’s life",
-      "Posts may show selected highlights rather than everyday reality",
-      "Every photo on social media is fake",
-      "All users have identical experiences",
+      "Posts always show every part of a person’s life",
+      "People may share only their best moments",
+      "Every photo online is fake",
+      "Everyone has the same life",
     ],
     correct: [1],
     explanation:
-      "People often share selected highlights. Comparing those highlights with an entire everyday life can create unrealistic expectations. This does not mean that every post is false or that everyone responds in the same way.",
+      "People often share happy moments and leave out hard days. A few posts do not show a whole life. This does not mean that every post is fake.",
   },
   {
     id: 9,
     type: "balance",
     format: "select",
-    title: "Which practices can support more balanced social media use?",
-    description: "Identify practical ways to reduce unnecessary interruptions.",
+    title: "Which habits can help people use social media in a healthy way?",
+    description: "Find ways to make time for life away from a screen.",
     options: [
-      "Turning off non-essential notifications",
-      "Setting aside phone-free time for sleep or focused tasks",
-      "Keeping every notification on to avoid missing any update",
-      "Choosing specific times to check apps",
+      "Turning off alerts that are not needed",
+      "Putting the phone away during sleep or important tasks",
+      "Keeping every alert on to avoid missing anything",
+      "Setting times to check apps",
     ],
     correct: [0, 1, 3],
     explanation:
-      "Reducing unnecessary notifications, protecting offline time, and checking apps intentionally can support balance. Keeping every alert active may add interruptions rather than reduce them.",
+      "Fewer alerts and set times for apps can help people stay focused. Putting phones away can make more time for sleep and other tasks. Keeping every alert on can make it harder to focus.",
   },
   {
     id: 10,
     type: "positive",
     format: "multiple",
-    title: "Which example shows a constructive use of social media?",
-    description:
-      "Look at how online communication can support community action.",
+    title: "Which is a helpful use of social media?",
+    description: "Learn how a post can help a local group.",
     options: [
-      "Posting someone’s address without permission",
-      "Sharing an unverified emergency rumor",
-      "Encouraging harassment of people who disagree",
-      "Sharing verified details about a community volunteer event",
+      "Posting someone’s address without asking",
+      "Sharing news about an emergency without checking it",
+      "Telling people to bully someone who disagrees",
+      "Sharing checked details about a local volunteer event",
     ],
     correct: [3],
     explanation:
-      "Sharing verified event details can help communities organize and participate. Posting private information, spreading rumors, and encouraging harassment can cause harm.",
+      "Correct event details can help people join in and help others. Sharing private details, false news, or hurtful posts can cause harm.",
   },
   {
     id: 11,
     type: "challenge",
     format: "select",
-    title: "Which actions can increase privacy risks on social media?",
-    description: "Understand how information can reach unintended audiences.",
+    title: "Which actions can put private information at risk?",
+    description: "Learn how private details can reach the wrong people.",
     options: [
-      "Posting a home address publicly",
-      "Reviewing who can see a post",
-      "Sharing live location details with a public audience",
-      "Posting another person’s private details without permission",
+      "Posting a home address for everyone to see",
+      "Checking who can see a post",
+      "Sharing a person’s exact location for everyone to see",
+      "Posting someone’s private details without asking",
     ],
     correct: [0, 2, 3],
     explanation:
-      "Public addresses, live location details, and other people’s private information can expose people to unwanted attention or misuse. Reviewing audience settings can help reduce exposure, though screenshots and resharing remain possible.",
+      "Public addresses, exact locations, and private details can be misused. Checking who can see a post helps protect privacy. But people can still take screenshots or share the post.",
   },
   {
     id: 12,
     type: "balance",
     format: "boolean",
-    title:
-      "Privacy settings guarantee that a post can never be copied or shared elsewhere.",
-    description: "Consider the limits of audience controls.",
+    title: "Privacy settings stop anyone from copying a post.",
+    description: "Learn what privacy settings can and cannot do.",
     options: ["True", "False"],
     correct: [1],
     explanation:
-      "Privacy settings help control who initially sees a post, but viewers may still take screenshots, copy it, or share it elsewhere. Audience controls cannot guarantee that information stays private.",
+      "Privacy settings help control who can see a post. But someone who sees it can still copy it or take a screenshot. Private posts can still be shared with others.",
   },
 ];
 
@@ -332,7 +327,7 @@ function render() {
   document.querySelector("#empty-copy").textContent =
     view === "saved" && !query && filter === "all"
       ? "Use the bookmark icon to save a question for later."
-      : "Try another search or explore a different topic.";
+      : "Try a different search or topic.";
   document.querySelector("#load-more").hidden = list.length <= limit;
   document.querySelector("#showing-count").textContent = list.length
     ? `Showing ${Math.min(limit, list.length)} of ${list.length} questions`
@@ -352,17 +347,16 @@ function setView(next) {
     .querySelectorAll("[data-view]")
     .forEach((el) => el.classList.toggle("active", el.dataset.view === view));
   document.querySelector("#section-title").textContent = {
-    explore: "A question can change a perspective.",
-    saved: "Good questions are worth revisiting.",
-    resources: "Good reads. Thoughtful next steps.",
+    explore: "Learn about social media.",
+    saved: "Saved questions.",
+    resources: "Learn more.",
   }[view];
   document.querySelector("#section-description").textContent = {
     explore:
-      "Explore the facts with multiple-choice, select-all-that-apply, and true/false questions.",
-    saved:
-      "Bookmarked questions, ready to revisit. Saved only in this browser.",
+      "Try multiple-choice, select-all-that-apply, and true/false questions.",
+    saved: "Find saved questions here. They stay in this browser only.",
     resources:
-      "Explore practical guidance on digital well-being, online safety, and media literacy.",
+      "Find tips for healthy habits, online safety, and checking facts.",
   }[view];
   render();
   document.querySelector("#questions").scrollIntoView({ behavior: "smooth" });
@@ -405,7 +399,7 @@ function showQuestion(q, attempt, inQuiz = false) {
     format = formats[q.format];
   const result = attempt.submitted ? isCorrect(q, attempt.selected) : null;
   openModal(`
-    ${inQuiz ? `<div class="eyebrow">KNOWLEDGE QUIZ · ${quizStep + 1} OF ${questions.length}</div><div class="quiz-progress" aria-hidden="true">${questions.map((_, i) => `<i class="${i <= quizStep ? "done" : ""}"></i>`).join("")}</div>` : ""}
+    ${inQuiz ? `<div class="eyebrow">QUIZ · ${quizStep + 1} OF ${questions.length}</div><div class="quiz-progress" aria-hidden="true">${questions.map((_, i) => `<i class="${i <= quizStep ? "done" : ""}"></i>`).join("")}</div>` : ""}
     <span class="badge ${q.type}">${icon(cat.icon)}${cat.label}</span>
     <h2>${q.title}</h2><p class="question-format">${format.label}</p>
     <form id="answer-form" novalidate>
@@ -427,14 +421,14 @@ function showQuestion(q, attempt, inQuiz = false) {
       ${
         attempt.submitted
           ? `<section class="answer-feedback ${result ? "is-correct" : "is-incorrect"}" id="answer-feedback" tabindex="-1" aria-labelledby="feedback-heading">
-        <h3 id="feedback-heading">${result ? "Correct!" : "Not quite. Here’s why."}</h3>
+        <h3 id="feedback-heading">${result ? "Correct!" : "Not quite. Here is the answer."}</h3>
         <p><strong>${q.correct.length > 1 ? "Correct answers" : "Correct answer"}:</strong> ${q.correct.map((i) => escape(q.options[i])).join("; ")}</p>
         <p>${q.explanation}</p>
       </section>`
           : ""
       }
       <div class="modal-actions">
-        ${inQuiz && quizStep > 0 ? '<button class="text-button" type="button" id="quiz-back">← Previous question</button>' : '<span class="privacy-note">General knowledge. No personal questions.</span>'}
+        ${inQuiz && quizStep > 0 ? '<button class="text-button" type="button" id="quiz-back">← Previous question</button>' : '<span class="privacy-note">Questions about facts, not personal life.</span>'}
         ${!attempt.submitted ? '<button class="button primary" type="submit" id="check-answer">Check answer</button>' : inQuiz ? `<button class="button primary" type="button" id="quiz-next">${quizStep === questions.length - 1 ? "See results" : "Next question"} ${icon("arrow-right")}</button>` : '<button class="button primary" type="button" id="retry-question">Try again</button>'}
       </div>
     </form>
@@ -469,7 +463,7 @@ function showQuestion(q, attempt, inQuiz = false) {
     content.querySelector("#answer-feedback").focus();
     if (!stored)
       toast(
-        "Progress saved for this visit only. Browser storage is unavailable.",
+        "Answers saved for this visit only. This browser cannot save them for later.",
       );
   });
   const back = content.querySelector("#quiz-back");
@@ -510,20 +504,20 @@ function showResult() {
   const score = questions.filter((q, i) =>
     isCorrect(q, quizAttempts[i].selected),
   ).length;
-  openModal(`<div class="eyebrow">KNOWLEDGE QUIZ COMPLETE</div><h2>${score === questions.length ? "A well-rounded perspective!" : "Every question is a chance to learn."}</h2>
+  openModal(`<div class="eyebrow">QUIZ COMPLETE</div><h2>${score === questions.length ? "All answers correct. Great job!" : "Good effort. Keep learning!"}</h2>
     <div class="quiz-score"><strong>${score} / ${questions.length}</strong><span>questions correct</span></div>
-    <p>One point per correct question. Select-all questions require all correct options and no extras. Review the explanations below to keep learning.</p>
+    <p>Each correct answer earns one point. For select-all questions, choose every right answer and no wrong ones. Open a question below to learn why an answer is right.</p>
     <div class="quiz-review">${questions
       .map(
         (
           q,
           i,
-        ) => `<details><summary>${icon(isCorrect(q, quizAttempts[i].selected) ? "check" : "x")}<span>${i + 1}. ${q.title}<small>${isCorrect(q, quizAttempts[i].selected) ? "Correct" : "Incorrect"} · ${formats[q.format].label}</small></span></summary>
+        ) => `<details><summary>${icon(isCorrect(q, quizAttempts[i].selected) ? "check" : "x")}<span>${i + 1}. ${q.title}<small>${isCorrect(q, quizAttempts[i].selected) ? "Correct" : "Wrong"} · ${formats[q.format].label}</small></span></summary>
       <p><strong>Selected:</strong> ${quizAttempts[i].selected.map((n) => escape(q.options[n])).join("; ")}</p>
       <p><strong>Correct:</strong> ${q.correct.map((n) => escape(q.options[n])).join("; ")}</p><p>${q.explanation}</p></details>`,
       )
       .join("")}</div>
-    <div class="modal-actions"><button class="text-button" id="quiz-restart">Retake quiz</button><button class="button primary" id="finish-quiz">Explore questions ${icon("arrow-right")}</button></div>`);
+    <div class="modal-actions"><button class="text-button" id="quiz-restart">Try the quiz again</button><button class="button primary" id="finish-quiz">View questions ${icon("arrow-right")}</button></div>`);
   content.querySelector("#quiz-restart").onclick = startQuiz;
   content.querySelector("#finish-quiz").onclick = () => {
     closeModal();
@@ -544,7 +538,7 @@ grid.addEventListener("click", (e) => {
         ? saved.includes(id)
           ? "Question saved for later."
           : "Bookmark removed."
-        : "Updated for this visit only. Browser storage is unavailable.",
+        : "Changes saved for this visit only. This browser cannot save them for later.",
     );
   }
   if (question) openQuestion(Number(question.dataset.question));
@@ -586,9 +580,9 @@ document.addEventListener("keydown", (e) => {
   }
 });
 document.querySelector("#how-button").onclick = () =>
-  openModal(`<div class="eyebrow">LEARN BOTH SIDES</div><h2>A little knowledge. A broader perspective.</h2><p>Explore general facts about social media’s benefits, risks, and responsible use. No personal experiences or private information needed.</p>
-  <ol class="steps"><li><h3>Choose a question</h3><p>Browse by topic or take the full 12-question knowledge quiz.</p></li><li><h3>Select an answer</h3><p>Choose one answer for multiple-choice and true/false questions. For select-all-that-apply questions, choose every correct option and no incorrect options.</p></li><li><h3>Learn from the explanation</h3><p>Check an answer for feedback, then keep exploring. Bookmarks and the latest checked answers stay in this browser. Clearing site data removes them.</p></li></ol>
-  <button class="button primary" id="start-exploring">Explore questions ${icon("arrow-right")}</button>`);
+  openModal(`<div class="eyebrow">HOW TO PLAY</div><h2>Choose an answer. Learn something new.</h2><p>Learn about the good and bad sides of social media. These questions ask about facts, not personal life.</p>
+  <ol class="steps"><li><h3>Choose a question</h3><p>Pick a topic or try all 12 questions in the quiz.</p></li><li><h3>Choose an answer</h3><p>For multiple-choice questions, choose one answer. For true/false questions, choose true or false. For select-all-that-apply questions, choose all the right answers and no wrong ones.</p></li><li><h3>Check the answer</h3><p>Press “Check answer” to see if it is right and learn why. Saved questions and answers stay in this browser. Clearing the site’s data removes them.</p></li></ol>
+  <button class="button primary" id="start-exploring">View questions ${icon("arrow-right")}</button>`);
 content.addEventListener("click", (e) => {
   if (e.target.closest("#start-exploring")) {
     closeModal();
@@ -600,23 +594,23 @@ document
   .forEach((b) => (b.onclick = startQuiz));
 const resources = [
   {
-    label: "DIGITAL WELL-BEING",
-    title: "Tools for digital well-being.",
-    text: "Explore tools and everyday ideas for more intentional technology use.",
+    label: "HEALTHY HABITS",
+    title: "Build healthy screen habits.",
+    text: "Find simple ways to manage time on phones and apps.",
     name: "Google Digital Wellbeing",
     url: "https://wellbeing.google/",
   },
   {
     label: "ONLINE SAFETY",
-    title: "Understand online safety.",
-    text: "Find guidance on privacy, online bullying, and navigating difficult experiences.",
+    title: "Learn how to stay safe online.",
+    text: "Find help with private information and online bullying.",
     name: "eSafety Commissioner",
     url: "https://www.esafety.gov.au/",
   },
   {
-    label: "MEDIA LITERACY",
-    title: "Learn to evaluate online information.",
-    text: "Explore resources about digital citizenship, online information, and media habits.",
+    label: "CHECKING FACTS",
+    title: "Learn how to check a post.",
+    text: "Learn how to spot false information and use the internet safely.",
     name: "Common Sense Education",
     url: "https://www.commonsense.org/education/digital-citizenship",
   },
